@@ -1,0 +1,20 @@
+{% extends "header.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block body %}
+
+<div class="text-center mt-5">
+    <form style="max-width: 300px; margin:auto;" method="POST" action="/login">
+        <h1 class="h3 mb-3 font-weight-normal"> Please Log In</h1>
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.username) }}
+        {{ wtf.form_field(form.password) }}
+        {{ wtf.form_field(form.remember) }}
+        <div class="mt-3">
+            <button class="btn btn-lg btn-primary btn-block">Sign Up</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
